@@ -22,3 +22,4 @@ def tlqkf(n:int,k:int,ans:int,candi:list):
     return ans
 print(tlqkf(num,0,0,candi))
 
+### set 써서 다시하기

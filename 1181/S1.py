@@ -1,3 +1,4 @@
+from curses import keyname
 import sys
 
 num_words  = int(sys.stdin.readline().strip())
@@ -16,3 +17,4 @@ for i in range(num_words):
 for i in sorted(dict_words.keys()):
     for j in sorted(dict_words[i]):
         print(j)
+
