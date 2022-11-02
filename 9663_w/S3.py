@@ -16,12 +16,18 @@ def tlqkf_start(n,k):
             for x_axis in candi[k]:
                 new_candi = copy.deepcopy(candi)
                 for y_axis in range(k+1,n):
-                    if y_axis+x_axis-k in new_candi[y_axis]:
+                    try:
                         new_candi[y_axis].remove(y_axis+x_axis-k)
-                    if -y_axis+x_axis+k in new_candi[y_axis]:
+                    except:
+                        pass
+                    try:
                         new_candi[y_axis].remove(-y_axis+x_axis+k)
-                    if x_axis in new_candi[y_axis]:
+                    except:
+                        pass
+                    try:
                         new_candi[y_axis].remove(x_axis)
+                    except:
+                        pass
                 tlqkf(n,k+1,new_candi)
     for i in range(n//2):
         new_candi = copy.deepcopy(candi)
