@@ -8,7 +8,6 @@ li = list(map(int,sys.stdin.readline().strip().split()))
 maxi = max(li)-b//a
 old_mid =0
 num_li = list(range(0,maxi+1))
-print(maxi)
 def binary_search(left:int, right:int,target):
     global maxi
     global old_mid
