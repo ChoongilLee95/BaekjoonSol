@@ -17,8 +17,7 @@ num_num  = int(sys.stdin.readline().strip())
 nums = map(int, sys.stdin.readline().strip().split())
 pos_heap = []
 neg_heap = []
-pos_sorted = []
-neg_sorted = []
+long = []
 for i in nums:
     if i <0:
         heapq.heappush(neg_heap,-i)
@@ -52,15 +51,14 @@ else:
     if len_p<len_n:
         short = pos_heap
         for i in range(len_n):
-            neg_sorted.append(heapq.heappop(neg_heap))
-        long = neg_sorted
+            long.append(heapq.heappop(neg_heap))
         pointer = 1
     else:
         pointer =-1
         short = neg_heap
         for i in range(len_p):
-            pos_sorted.append(heapq.heappop(pos_heap))
-        long = pos_sorted
+            long.append(heapq.heappop(pos_heap))
+
     for num in short:
         for j in range(target):
             if binary_search(long,0,len(long)-1,num-j):
