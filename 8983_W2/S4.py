@@ -1,15 +1,20 @@
 import sys
 ## 93퍼까진 간 풀이
 def binary_search(li,left:int, right:int,target):
-    while left+1 != right:
+    while left <= right:
         mid = (left+right)//2
         if li[mid] ==target:
             return [li[mid]]
         elif li[mid]<target:
-            left = mid
+            left = mid+1
         else:
-            right = mid
-    return [li[left],li[right]]
+            right = mid-1
+    if left > len(li)-1:
+        return [li[right]]
+    elif right <0:
+        return [li[left]]
+    else:
+        return [li[left],li[right]]
 
 M,N,L  = map(int,sys.stdin.readline().strip().split())
 
