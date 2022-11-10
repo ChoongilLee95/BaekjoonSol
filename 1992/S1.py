@@ -23,7 +23,6 @@ nums = []
 n  = int(sys.stdin.readline().strip())
 for i in range(n):
     nums.append(list(sys.stdin.readline().strip()))
-print(nums)
 while n>1:
     nums = make_new(n)
     n//=2

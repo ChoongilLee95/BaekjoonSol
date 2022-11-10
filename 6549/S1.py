@@ -14,7 +14,7 @@ boxes  = list(map(int,sys.stdin.readline().strip().split()))
 while boxes[0]:
     left = 1
     right = boxes[0]
-    sqr = (right-left+1)
+    sqr = right-left+1
     while left <=right:
         new_sqr = (right-left+1)*mini(boxes,left,right)
         if new_sqr>sqr:

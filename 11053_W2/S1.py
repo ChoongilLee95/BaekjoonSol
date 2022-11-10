@@ -11,7 +11,7 @@ for i in range(1,num):
     new = 1
     for j in range(0,i): ## 그 전항까지의 자기 보다 작은 수 중 증가하는 부분집합의 길이가 가장 큰애 +1
         if nums[j]<nums[i]:
-            if len_list[j] +1 >new: 
+            if len_list[j] +1 >new:
                 new = len_list[j]+1
     len_list.append(new) ## 이부분이 메모이제이션
     if new>maxi:

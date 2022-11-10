@@ -11,6 +11,5 @@ for i in range(n-1):
         if len(nums)==0:
             break
     nums.append(num)
-print(nums)
 print(len(nums))
 

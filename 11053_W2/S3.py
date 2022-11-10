@@ -19,7 +19,7 @@ for i in range(1,num):
     else:
         left = 0
         right = len(L)-1
-        while left < right:
+        while left <= right:
             mid = (left+right)//2
             if L[mid] ==nums[i]:
                 break
