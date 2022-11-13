@@ -1,4 +1,5 @@
 import sys
+from collections import deque
 n  = int(sys.stdin.readline().strip())
 num_list = []
 for _ in range(n):
@@ -8,7 +9,7 @@ for _ in range(n):
     num_list.append([x1,x2,x1])
 num_list.sort(key=lambda x: (x[0], -x[1]))
 ans = 1
-deque_list = []
+deque_list = deque()
 for new in num_list:
     ans +=1
     if deque_list:
@@ -18,7 +19,9 @@ for new in num_list:
                 ans+=1
             if not deque_list:
                 break
-        for pre in deque_list:
+        i = len(deque_list)-1
+        while i >-1:
+            pre = deque_list[i]
             if pre[1] > new[0]:
                 # pre가 new를 포함할때 (뒤쪽 끝이 겹치는거 포함)
                 if pre[1]>=new[1]:
@@ -33,11 +36,10 @@ for new in num_list:
                     # pre가 new에게 영향
                     if new[2] < pre[1]:
                         new[2] = pre[1]
-            else:
-                continue
-        deque_list.append(new)
+            i -=1
+        deque_list.appendleft(new)
     else:
-        deque_list.append(new)
+        deque_list.appendleft(new)
 while deque_list:
     left = deque_list.pop()
     if left[2] >= left[1]:

@@ -1,4 +1,5 @@
 import sys
+
 num_vtx  = int(sys.stdin.readline().strip())
 
 inOut = '0'+sys.stdin.readline().strip()
