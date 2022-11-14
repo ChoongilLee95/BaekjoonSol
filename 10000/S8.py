@@ -19,7 +19,6 @@ for _ in range(n):
     a,b = map(int,sys.stdin.readline().strip().split())
     x1, x2 = a-b,a+b
     num_list.append([x1,x2])
-    num_start.append(x1)
 num_list.sort(key=lambda x: (x[0], -x[1]))
 ans = 1+n
 for i in range(n-1):

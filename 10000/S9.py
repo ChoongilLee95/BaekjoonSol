@@ -21,6 +21,5 @@ for i in range(n):
                 if deque_list[-1][2] == deque_list[-1][1]:
                     deque_list.pop()
                     ans +=1
-    if i < n-1 and num_list[i+1][0] == new[0]:
-        deque_list.append(new)
+    deque_list.append(new)
 print(ans)
