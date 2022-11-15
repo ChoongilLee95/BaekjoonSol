@@ -1,5 +1,6 @@
 import sys
 
+# 안녹은애 기준으로 bfs
 sys.setrecursionlimit(10**6)
 input  = sys.stdin.readline
 
@@ -47,7 +48,6 @@ while True:
                     left += dfs(col,row)
         if t_b ==2:
             break
-    print(left,ice)
     if t_b == 0:
         ans =0
         break
