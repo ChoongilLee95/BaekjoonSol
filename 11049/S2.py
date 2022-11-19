@@ -16,15 +16,17 @@ list_n.append(b)
 
 left = list_n[0]
 right = list_n[-1]
-
-# 0~num_m-2
-for_now = [0]*(num_m-1)
+# 비트 마스킹, n개의 0을 표현하기 위해선 0001 2**(idx)
+# 해당 인덱스의 1인지 0인지 확인 방법
+# 2**(i-1)
+# 0~num_m-2 num_m-1개의 0
+for_now = 2**(num_m-1)
 
 # now리스트에서 하나 빼는 때에 더해지느 수를 리턴하는 함수
-def popping(n,arr):
+def popping(idx,arr):
     global num_m
-    n_l = n-1
-    n_r = n+1
+    n_l = idx-1
+    n_r = idx+1
     while -1<n_l and arr[n_l] == 1:
         n_l-=1
     if n_l == -1:
@@ -37,7 +39,7 @@ def popping(n,arr):
         n_r = right
     else:
         n_r = list_n[n_r+1]
-    return n_l*n_r*list_n[n+1]
+    return n_l*n_r*list_n[idx+1]
 # 튜플이 들어갈 예정 대응되는 값은 빠지면서 더해진 애들의 합
 dp = dict()
 
