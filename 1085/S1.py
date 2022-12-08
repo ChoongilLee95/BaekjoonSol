@@ -2,7 +2,7 @@ import sys
 x, y, w, h = map(int, sys.stdin.readline().split(' '))
 
 if x*2 > w:
-    short_x = w-x
+    short_x = w- x
 else:
     short_x = x
 
